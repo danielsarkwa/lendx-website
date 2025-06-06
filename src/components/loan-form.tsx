@@ -98,11 +98,11 @@ export default function LoanForm() {
         <div className='border-b border-dashed border-[#ECE9E9] [border-dash-array:6_6]'></div>
 
         {/* payment summary */}
-        <PaymentSummary amount={1000} />
+        <PaymentSummary amount={5000} />
 
         <div className=''>
-          <Button type='submit'>
-            Submit
+          <Button type='submit' size='lg'>
+            Submit application
             <Send />
           </Button>
         </div>

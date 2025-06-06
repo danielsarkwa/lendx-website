@@ -4,34 +4,48 @@ export default function PaymentSummary({ amount }: { amount: number }) {
   const monthlyPayment = calculateMonthlyPayment(amount);
 
   return (
-    <div>
+    <div className='bg-[#F8F7F7] rounded-[10px] py-4 px-[18px] flex flex-col gap-6'>
       {/* header */}
-      <div>
-        <h2>Payment Summary</h2>
-        <p>Review your payment details before submitting.</p>
+      <div className='flex flex-col gap-0.5'>
+        <h2 className='text-xl font-semibold leading-tight'>Payment Summary</h2>
+        <p className='text-lg text-[#61737F] font-regular leading-tight'>
+          Review your payment details before submitting.
+        </p>
       </div>
 
       {/* summary details */}
-      <div>
+      <div className='flex items-center justify-between gap-6'>
         {/* lhs */}
-        <div>
-          <div>
-            <p>Interest rate</p>
-            <p>5%</p>
+        <div className='flex-1 flex flex-col items-start gap-3.5'>
+          <div className='flex flex-col gap-0.5'>
+            <p className='text-sm text-[#61737F] font-regular leading-tight'>
+              Interest rate
+            </p>
+            <p className='text-lg font-semibold text-foreground leading-tight'>
+              5%
+            </p>
           </div>
-          <div>
-            <p>Payback period</p>
-            <p>12 months</p>
+          <div className='flex flex-col gap-0.5'>
+            <p className='text-sm text-[#61737F] font-regular leading-tight'>
+              Payback period
+            </p>
+            <p className='text-lg font-semibold text-foreground leading-tight'>
+              12 months
+            </p>
           </div>
         </div>
 
-        <div className='border-b border-dashed border-[#ECE9E9] [border-dash-array:6_6] min-h-[134px] w-[1px]'></div>
+        <div className='h-20 border-l border-dashed border-[#ECE9E9] [border-dash-array:6_6]'></div>
 
         {/* rhs */}
-        <div>
+        <div className='flex-1'>
           <div>
-            <p>Monthly re-payment</p>
-            <p>€{monthlyPayment}</p>
+            <p className='text-sm text-[#61737F] font-regular leading-tight'>
+              Monthly re-payment
+            </p>
+            <p className='text-4xl font-semibold text-foreground leading-tight'>
+              €{monthlyPayment}
+            </p>
           </div>
         </div>
       </div>

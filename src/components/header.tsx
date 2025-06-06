@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 
 export function Header() {
   return (
-    <header className='sticky top-0 z-50 flex items-center justify-between py-4 px-[100px] bg-[#FAFAFA]'>
+    <header className='container mx-auto sticky top-0 z-50 flex items-center justify-between py-4 px-[100px] bg-[#FAFAFA]'>
       {/* logo */}
       <div>
         <a href='#'>

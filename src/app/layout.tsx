@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${switzer.variable}`}>
         {/* count down banner */}
         <Header />
-        <main>{children}</main>
+        <main className='container mx-auto'>{children}</main>
         <Footer />
       </body>
     </html>
