@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${switzer.variable}`}>
+        {/* count down banner */}
         {/* header component */}
         <main>{children}</main>
         {/* footer component */}
