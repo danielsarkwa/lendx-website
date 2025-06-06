@@ -21,9 +21,10 @@ export const testimonials = [
     image: '/testimonials/august.png',
   },
   {
-    name: 'James',
-    occupation: "Master's",
-    message: 'Lendx tuition g and eas instead',
+    name: 'James Smith',
+    occupation: "Master'student",
+    message:
+      'Lendx helped me cover my tuition fees without any hassle. The process was straightforward, and I had the money in my account within a day. Highly recommend!',
     image: '/testimonials/james.png',
   },
 ];
