@@ -1,4 +1,4 @@
-const partners = [
+export const partners = [
   { logo: '/partners-logos/ameriprise.svg', name: 'ameriprise' },
   { logo: '/partners-logos/barclays.svg', name: 'barclays' },
   { logo: '/partners-logos/charlesschwab.svg', name: 'charlesschwab' },
@@ -8,5 +8,3 @@ const partners = [
   { logo: '/partners-logos/goldmansachs.svg', name: 'goldmansachs' },
   { logo: '/partners-logos/nubank.svg', name: 'nubank' },
 ];
-
-export default partners;

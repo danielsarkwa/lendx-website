@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge';
-import partners from '@/constants/partners';
+import { partners } from '@/constants/partners';
 import Image from 'next/image';
 
 export default function Partners() {
