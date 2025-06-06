@@ -12,8 +12,11 @@ import { Languages } from 'lucide-react';
 export default function LanguageSwitcher() {
   return (
     <Select defaultValue='en'>
-      <SelectTrigger hideChevron>
-        <Languages />
+      <SelectTrigger
+        hideChevron
+        className='bg-[#F0F0F0] shadow-none border-none'
+      >
+        <Languages className='text-foreground' />
         <SelectValue placeholder='Select a language' />
       </SelectTrigger>
       <SelectContent>

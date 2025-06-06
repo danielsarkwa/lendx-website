@@ -4,11 +4,11 @@ import { Input } from '@/components/ui/input';
 
 export default function AmountInput() {
   return (
-    <div>
+    <div className='bg-[#F5F5FF] py-4 px-[18px] rounded-[10px] flex flex-col gap-2'>
       <p>Enter loan amount between €1000 and €20,000</p>
-      <div>
+      <div className='flex items-center justify-between gap-2'>
         {/* icon container */}
-        <div>
+        <div className='h-full'>
           <Button
             size='icon'
             className='rounded-full bg-[#E0E0FF] text-foreground'
@@ -18,7 +18,7 @@ export default function AmountInput() {
         </div>
 
         {/* input container */}
-        <div>
+        <div className='flex-1'>
           <Input
             type='number'
             placeholder='Amount'
@@ -31,7 +31,7 @@ export default function AmountInput() {
         </div>
 
         {/* icon container */}
-        <div>
+        <div className='h-full'>
           <Button
             size='icon'
             className='rounded-full bg-[#E0E0FF] text-foreground'

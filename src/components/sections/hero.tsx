@@ -5,9 +5,9 @@ export default function Hero() {
   return (
     <section className='flex'>
       {/* lhs */}
-      <div className='py-[270px] flex-1'>
+      <div className='py-[200px] pl-[100px] flex-1'>
         <div
-          className='flex flex-col max-w-[556px] gap-6 mx-auto'
+          className='flex flex-col max-w-[556px] gap-6'
           style={{ position: 'relative' }}
         >
           <h1 className='text-[60px] font-semibold leading-tight'>
@@ -34,7 +34,7 @@ export default function Hero() {
       </div>
 
       {/* rhs */}
-      <div className='flex-1'>
+      <div className='flex-1 py-[100px] px-[55px]'>
         <LoadForm />
       </div>
     </section>
