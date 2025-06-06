@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function OurProcess() {
   return (
-    <section className='bg-[#CEF8F4]'>
+    <section id='our-process' className='bg-[#CEF8F4]'>
       {/* section header */}
       <div>
         <h2>How it works</h2>

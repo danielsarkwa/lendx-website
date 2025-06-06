@@ -9,7 +9,7 @@ export default function FAQs() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
-    <section>
+    <section id='faqs'>
       {/* section header */}
       <div>
         <h2>FAQs</h2>

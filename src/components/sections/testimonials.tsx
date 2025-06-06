@@ -4,7 +4,7 @@ import { testimonials } from '@/constants/testimonials';
 
 export default function Testimonials() {
   return (
-    <section>
+    <section id='testimonials'>
       {/* section header */}
       <div>
         <h2>Loved by other dreamer like you.</h2>
