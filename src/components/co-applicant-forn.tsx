@@ -17,7 +17,7 @@ export default function CoApplicantForm() {
       </div>
 
       {/* form */}
-      <form className='flex flex-col gap-[30px]'>
+      <div className='flex flex-col gap-[30px]'>
         <div className='flex flex-col gap-1.5'>
           <Label htmlFor='name' className='text-foreground'>
             Full name *
@@ -58,7 +58,7 @@ export default function CoApplicantForm() {
             <Trash2 />
           </Button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
