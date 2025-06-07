@@ -1,19 +1,19 @@
 'use client';
 
-import { Minus } from 'lucide-react';
+import { Minus, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 export default function AmountInput() {
   return (
-    <div className='bg-[#F5F5FF] py-4 px-[18px] rounded-[10px] flex flex-col gap-2'>
+    <div className='bg-[#F5F5FF] py-4 px-[18px] rounded-[10px] flex flex-col gap-3'>
       <p>Enter loan amount between €1000 and €20,000</p>
       <div className='flex items-center justify-between gap-2'>
         {/* icon container */}
-        <div className='h-full'>
+        <div className='h-full mb-6'>
           <Button
             size='icon'
-            className='rounded-full bg-[#E0E0FF] text-foreground'
+            className='rounded-full bg-[#E0E0FF] shadow-none text-foreground hover:bg-primary/30'
           >
             <Minus />
           </Button>
@@ -25,18 +25,18 @@ export default function AmountInput() {
             type='text'
             placeholder='€1000'
             style={{ fontSize: '45px' }}
-            className='font-semibold py-8 border-[#CCCBFF] bg-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
+            className='font-semibold py-8 border-[#CCCBFF] border-[1.5px] bg-white'
           />
           <p className='text-[#45454E]'>Must be with intervals of €1000 only</p>
         </div>
 
         {/* icon container */}
-        <div className='h-full'>
+        <div className='h-full mb-6'>
           <Button
             size='icon'
-            className='rounded-full bg-[#E0E0FF] text-foreground'
+            className='rounded-full bg-[#E0E0FF] shadow-none text-foreground hover:bg-primary/30'
           >
-            <Minus />
+            <Plus />
           </Button>
         </div>
       </div>
