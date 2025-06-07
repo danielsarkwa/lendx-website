@@ -7,7 +7,7 @@ This project is a landing page for a fictional fintech product as a tool to help
 ## IMPORTANT INFO
 
 - View the live website at -- [lendx-website.vercel.app](https://lendx-website.vercel.app/)
-- Quick <2 mins video of my design process for this test on [Loom]()
+- Quick 5 mins walkthrough video of my design process for this project can be [found on Loom](https://www.loom.com/share/3dce4a3ffeaa4d4a8aa45a27b77c786e?sid=2b6c0f38-1833-4636-a7e1-b06081ab43c5)
 
 ## Features
 
@@ -95,6 +95,40 @@ To deploy this Next.js website to Vercel, follow these steps:
 3. Import the forked GitHub repository
 4. Configure and Deploy: Vercel will automatically configure everything needed, so you just need to click deploy to start the deployment process.
 5. Once the deployment is complete, Vercel will show you a preview of the hosted website, click on the image or continue to the dashboard to view the link to where website is hosted.
+
+## Design and Technical Decisions
+
+1. **Next.js as the Framework**: I chose Next.js for its built-in optimizations, such as server-side rendering and static site generation, which enhance website performance and SEO. Its flexibility supports diverse resources, enabling scalable and efficient development.
+
+2. **Tailwind CSS and shadcn/ui for Styling and Components**: I utilized Tailwind CSS for its utility-first approach, enabling rapid and responsive styling with minimal custom CSS. Combined with shadcn/ui, a component library built on Tailwind, I ensured a consistent, accessible, and customizable UI design, streamlining development while maintaining a modern, cohesive aesthetic.
+
+3. **Helper Texts for Form Fields**: I incorporated helper texts in key form fields to guide users, reducing errors and aligning with Nielsen’s usability heuristics for *Error Prevention* and *Help and Documentation* ([Nielsen Norman Group](https://www.nngroup.com/articles/ten-usability-heuristics/)). This improves user experience by clarifying expectations.
+
+4. **Prominent Loan Amount Input**: The loan amount input field is positioned at the top of the form with visually appealing styling to draw attention. This design leverages the **Hook Model** for customer engagement, encouraging users to take action and increasing form completion rates by fostering early investment in the process.
+
+5. **Increment/Decrement Buttons**: I added "+" and "−" buttons next to the loan amount field to cater to experienced users familiar with similar UI patterns. This supports Nielsen’s *Flexibility and Efficiency of Use* heuristic while preventing errors by restricting inputs to increments of 1,000.
+
+6. **Flexible Input with User Control**: While the buttons enforce structured input, I allowed users to manually type their desired loan amount, adhering to Nielsen’s *User Control and Freedom* heuristic. This balances flexibility with guided interaction.
+
+7. **Simplified Error Recovery**: To streamline error correction, I implemented automatic rounding of non-1,000-interval inputs to the nearest 1,000. This reduces user effort in correcting values while maintaining system consistency.
+
+8. **Clear Error Messaging**: The loan amount field includes concise, actionable error messages displayed upon invalid input, enabling users to quickly resolve issues and enhancing usability.
+
+9. **Real-Time Field Validation**: Validation occurs individually for each field upon losing focus (onBlur event), providing timely feedback without overwhelming the user. This approach minimizes disruption and aligns with intuitive form interaction.
+
+10.  **Countdown Banner for Urgency**: I designed a countdown banner with a clear title and description to create urgency, motivating users to act on loan applications. This leverages psychological triggers to boost engagement.
+
+11. **Progressive Disclosure for Co-Applicant Form**: To avoid overwhelming users, the co-applicant form is revealed progressively during the application process. This keeps the initial interface clean and focused, improving user flow.
+
+## Future Potential Improvements
+
+1. **Customizable Countdown Banner**: Implement a dashboard for administrators to customize countdown banner messages, enabling dynamic promotion of multiple events or special offers tailored to business needs.
+
+2. **Smart Countdown Triggers**: Enhance the countdown banner to automatically activate based on event proximity (e.g., 60 days before a New Year promotion). This ensures timely visibility for critical campaigns.
+
+3. **User Portal for Application Tracking**: Develop a user portal where applicants can track their loan application status, submit additional documents, and receive updates, improving transparency and engagement.
+
+4. **A/B Testing for Hero Section**: Introduce A/B testing for the hero section with variations in visuals, copy, or calls-to-action to optimize user acquisition and conversion rates based on data-driven insights.
 
 ## Contributing
 
