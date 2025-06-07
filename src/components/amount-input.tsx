@@ -1,3 +1,5 @@
+'use client';
+
 import { Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -18,16 +20,14 @@ export default function AmountInput() {
         </div>
 
         {/* input container */}
-        <div className='flex-1'>
+        <div className='flex-1 flex flex-col gap-1'>
           <Input
-            type='number'
-            placeholder='Amount'
-            min='1000'
-            max='20000'
-            step='1000'
-            className='[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
+            type='text'
+            placeholder='€1000'
+            style={{ fontSize: '45px' }}
+            className='font-semibold py-8 border-[#CCCBFF] bg-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
           />
-          <p>Must be with intervals of €1000 only</p>
+          <p className='text-[#45454E]'>Must be with intervals of €1000 only</p>
         </div>
 
         {/* icon container */}
