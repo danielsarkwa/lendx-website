@@ -8,7 +8,7 @@ export default function PaymentSummary({ amount }: { amount: number }) {
       {/* header */}
       <div className='flex flex-col gap-0.5'>
         <h2 className='text-xl font-semibold leading-tight'>Payment Summary</h2>
-        <p className='text-lg text-[#61737F] font-regular leading-tight'>
+        <p className='text-base text-[#61737F] font-regular leading-tight'>
           Review your payment details before submitting.
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function PaymentSummary({ amount }: { amount: number }) {
             <p className='text-sm text-[#61737F] font-regular leading-tight'>
               Monthly re-payment
             </p>
-            <p className='text-4xl font-semibold text-foreground leading-tight'>
+            <p className='text-3xl lg:text-4xl font-semibold text-foreground leading-tight'>
               €{monthlyPayment}
             </p>
           </div>

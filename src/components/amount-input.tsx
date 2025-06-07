@@ -88,31 +88,40 @@ export default function AmountInput({ value, onChange }: AmountInputProps) {
   };
 
   return (
-    <div className='bg-[#F5F5FF] py-4 px-[18px] rounded-[10px] flex flex-col gap-3'>
-      <p>Enter loan amount between €1000 and €20,000</p>
-      <div className='flex items-center justify-between gap-2'>
+    <div className='bg-[#F5F5FF] p-3 rounded-[8px] flex flex-col gap-3 lg:p-4 lg:px-[18px] lg:rounded-[10px] lg:gap-3'>
+      <p className='text-sm lg:text-base'>
+        Enter loan amount between €1000 and €20,000
+      </p>
+      <div className='flex items-start lg:items-center justify-between gap-2 lg:gap-4'>
         {/* icon container */}
-        <div className='h-full mb-6'>
+        <div className='h-full mt-1 lg:mt-0 lg:mb-6'>
           <Button
             type='button'
             size='icon'
-            className='rounded-full bg-[#E0E0FF] shadow-none text-foreground hover:bg-primary/30'
+            className='size-10 rounded-full bg-[#E0E0FF] shadow-none text-foreground hover:bg-primary/30'
             onClick={handleDecrement}
             disabled={value <= 1000}
           >
-            <Minus />
+            <Minus className='size-6 lg:size-6' />
           </Button>
         </div>
 
         {/* input container */}
         <div className='flex-1 flex flex-col gap-1'>
-          <div className='flex items-center gap-2'>
+          <div
+            className='flex items-center gap-1 lg:gap-2'
+            style={{ position: 'relative' }}
+          >
             <Input
               type='text'
               value='€'
               readOnly
-              style={{ fontSize: '45px' }}
-              className='font-semibold py-8 border-none bg-white w-[65px]'
+              style={{
+                fontSize: '28px',
+                position: 'absolute',
+                pointerEvents: 'none',
+              }}
+              className='font-semibold py-5 border-none bg-none w-[40px] lg:py-8 lg:w-[50px] lg:text-[45px]'
             />
             <Input
               type='number'
@@ -125,20 +134,18 @@ export default function AmountInput({ value, onChange }: AmountInputProps) {
               value={value || ''}
               onChange={handleInputChange}
               onBlur={handleInputBlur}
-              style={{
-                fontSize: '45px',
-              }}
-              className='font-semibold py-8 border-[#CCCBFF] border-[1.5px] bg-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
+              style={{ fontSize: '28px' }}
+              className='font-semibold py-5 pl-[30px] lg:pl-[32px] border-[#CCCBFF] border-[1.5px] bg-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none lg:py-8 lg:text-[45px]'
             />
           </div>
-          <div className='pl-[65px]'>
+          <div className=''>
             {error ? (
-              <p className='text-red-600 flex items-center gap-1'>
-                <Ban className='size-4' />
+              <p className='text-red-600 flex items-center gap-1 text-sm lg:text-base'>
+                <Ban className='size-3 lg:size-4' />
                 {error}
               </p>
             ) : (
-              <p className='text-[#45454E]'>
+              <p className='text-[#45454E] text-sm lg:text-base'>
                 Must be with intervals of €1000 only
               </p>
             )}
@@ -146,15 +153,15 @@ export default function AmountInput({ value, onChange }: AmountInputProps) {
         </div>
 
         {/* icon container */}
-        <div className='h-full mb-6'>
+        <div className='h-full mt-1 lg:mt-0 lg:mb-6'>
           <Button
             type='button'
             size='icon'
-            className='rounded-full bg-[#E0E0FF] shadow-none text-foreground hover:bg-primary/30'
+            className='size-10 rounded-full bg-[#E0E0FF] shadow-none text-foreground hover:bg-primary/30'
             onClick={handleIncrement}
             disabled={value >= 20000}
           >
-            <Plus />
+            <Plus className='size-5 lg:size-6' />
           </Button>
         </div>
       </div>

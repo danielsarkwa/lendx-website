@@ -43,13 +43,13 @@ export default function CoApplicantForm({
         <h2 className='text-xl font-semibold leading-tight'>
           Co-applicant information
         </h2>
-        <p className='text-lg text-[#61737F] font-regular leading-tight'>
+        <p className='text-base text-[#61737F] font-regular leading-tight'>
           Provide the basic information for the co-applicant.
         </p>
       </div>
 
       {/* form */}
-      <div className='flex flex-col gap-[30px]'>
+      <div className='flex flex-col gap-4 lg:gap-[30px]'>
         <div className='flex flex-col gap-1.5'>
           <Label htmlFor='name' className='text-foreground'>
             Full name *
@@ -71,7 +71,7 @@ export default function CoApplicantForm({
               }}
             />
             {errors.coApplicantFullName && (
-              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+              <p className='text-red-600 flex items-center gap-1 text-sm lg:text-base'>
                 {errors.coApplicantFullName}
               </p>
             )}
@@ -98,7 +98,7 @@ export default function CoApplicantForm({
               }}
             />
             {errors.coApplicantEmail && (
-              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+              <p className='text-red-600 flex items-center gap-1 text-sm lg:text-base'>
                 {errors.coApplicantEmail}
               </p>
             )}
@@ -126,11 +126,11 @@ export default function CoApplicantForm({
               pattern='^\+?[0-9\s]+$' // Basic pattern for phone numbers
             />
             {errors.coApplicantPhone ? (
-              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+              <p className='text-red-600 flex items-center gap-1 text-sm lg:text-base'>
                 {errors.coApplicantPhone}
               </p>
             ) : (
-              <p className='text-[15px] text-muted-foreground'>
+              <p className='text-sm lg:text-base text-muted-foreground'>
                 Include country code
               </p>
             )}
