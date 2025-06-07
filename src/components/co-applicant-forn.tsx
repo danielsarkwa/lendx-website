@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
@@ -63,7 +64,7 @@ export default function CoApplicantForm({
               onChange={(e) => setFullName(e.target.value)}
               onBlur={() => {
                 const error = validateFullName(fullName);
-                setErrors((prev) => ({
+                setErrors((prev: any) => ({
                   ...prev,
                   coApplicantFullName: error || '',
                 }));
@@ -90,7 +91,7 @@ export default function CoApplicantForm({
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => {
                 const error = validateEmail(email);
-                setErrors((prev) => ({
+                setErrors((prev: any) => ({
                   ...prev,
                   coApplicantEmail: error || '',
                 }));
@@ -117,7 +118,7 @@ export default function CoApplicantForm({
               onChange={(e) => setPhone(e.target.value)}
               onBlur={() => {
                 const error = validatePhone(phone);
-                setErrors((prev) => ({
+                setErrors((prev: any) => ({
                   ...prev,
                   coApplicantPhone: error || '',
                 }));
