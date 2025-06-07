@@ -27,7 +27,7 @@ export const faqs = [
   {
     question: 'Will applying affect my credit score?',
     answer:
-      'When you apply for a loan, we perform a soft credit check that does not impact your credit score. However, if you are approved and accept the loan, a hard inquiry will be made, which may affect your score.',
+      'No. Checking your loan eligibility won’t impact your credit score. A full credit check may occur after you accept the offer.',
   },
   {
     question: 'Can I repay my loan early?',

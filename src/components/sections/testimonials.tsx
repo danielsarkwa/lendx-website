@@ -4,7 +4,7 @@ import { testimonials } from '@/constants/testimonials';
 
 export default function Testimonials() {
   return (
-    <section id='testimonials' className='flex flex-col py-[90px] gap-[50px]'>
+    <section id='testimonials' className='flex flex-col py-[90px] gap-[50px] px-[100px]'>
       {/* section header */}
       <div className='flex flex-col gap-5'>
         <div className='flex flex-col items-start w-fit gap-2'>

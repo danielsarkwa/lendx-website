@@ -9,14 +9,20 @@ export default function FAQs() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
-    <section id='faqs'>
+    <section
+      id='faqs'
+      className='flex justify-between py-[90px] px-[100px] bg-white overflow-clip'
+      style={{ position: 'relative' }}
+    >
       {/* section header */}
-      <div>
-        <h2>FAQs</h2>
+      <div className=''>
+        <h2 className='text-5xl font-semibold leading-tight text-center'>
+          FAQs
+        </h2>
       </div>
 
       {/* FAQs container */}
-      <div>
+      <div className='flex flex-col gap-3'>
         {faqs.map((faq, index) => (
           <FAQItem
             key={index}
@@ -33,6 +39,12 @@ export default function FAQs() {
         width={361}
         height={383}
         className='object-contain'
+        style={{
+          position: 'absolute',
+          zIndex: 0,
+          bottom: '-8px',
+          left: '-11px',
+        }}
       />
     </section>
   );
@@ -48,10 +60,17 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div onClick={onToggle} className='cursor-pointer'>
-      <div>
-        <h3>{faq.question}</h3>
-        {isOpen && <p className='text-gray-700'>{faq.answer}</p>}
+    <div
+      onClick={onToggle}
+      className='cursor-pointer w-[729px] bg-[#F7F7F7] rounded-[10px] p-6 flex justify-between items-center gap-4 transition-colors duration-250 hover:bg-[#f2f1f1]'
+    >
+      <div className='flex-1 flex flex-col gap-1.5'>
+        <h3 className='text-lg text-foreground leading-tight'>
+          {faq.question}
+        </h3>
+        {isOpen && (
+          <p className='text-lg text-[#647581] leading-tight'>{faq.answer}</p>
+        )}
       </div>
       <div>
         {isOpen ? (
