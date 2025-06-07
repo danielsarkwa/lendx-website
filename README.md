@@ -4,6 +4,20 @@ This project is a landing page for a fictional fintech product as a tool to help
 
 ![Mockup](https://res.cloudinary.com/dqmmpbow6/image/upload/v1749201481/danielsarkwa-com-v2/portfolio-assets/lendx-landing-page/lendx-1_rrkpak.png)
 
+## Table of Contents
+
+- [Lendx landing page](#lendx-landing-page)
+  - [Table of Contents](#table-of-contents)
+  - [IMPORTANT INFO](#important-info)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [Running the Project Locally](#running-the-project-locally)
+  - [Project Structure and Directory](#project-structure-and-directory)
+  - [Deployment](#deployment)
+  - [Design and Technical Decisions](#design-and-technical-decisions)
+  - [Future Potential Improvements](#future-potential-improvements)
+  - [Contributing](#contributing)
+
 ## IMPORTANT INFO
 
 - View the live website at -- [lendx-website.vercel.app](https://lendx-website.vercel.app/)
