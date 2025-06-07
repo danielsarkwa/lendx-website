@@ -5,7 +5,7 @@ export default function OurProcess() {
   return (
     <section
       id='our-process'
-      className='max-w-[1300px] mx-auto bg-[#CEF8F4] rounded-[20px] sm:rounded-[30px] lg:rounded-[50px] py-12 lg:py-[90px] px-4 sm:px-8 lg:px-[100px] flex flex-col items-center gap-6 sm:gap-8 lg:gap-[50px]'
+      className='max-w-[1300px] mx-auto bg-[#CEF8F4] rounded-[20px] sm:rounded-[30px] lg:rounded-[50px] py-20 lg:py-[90px] px-4 sm:px-8 lg:px-[100px] flex flex-col items-center gap-10 sm:gap-8 lg:gap-[50px]'
     >
       {/* section header */}
       <div className='flex flex-col items-center w-full sm:w-fit relative'>
@@ -22,12 +22,12 @@ export default function OurProcess() {
           width={120}
           height={10}
           sizes='(max-width: 640px) 120px, (max-width: 1024px) 150px, 196px'
-          className='absolute top-8 sm:top-10 lg:top-[50px] right-0 sm:right-10 lg:right-[70px]'
+          className='absolute w-[120px] top-8 right-[90px] sm:top-10 sm:w-[130px] sm:right-[120px] lg:top-[50px] lg:right-[90px] lg:w-auto'
         />
       </div>
 
       {/* steps container */}
-      <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-[30px] w-full'>
+      <div className='flex flex-col sm:flex-row gap-6 sm:gap-6 lg:gap-[30px] w-full'>
         {steps.map((step, index) => (
           <div
             key={index}
@@ -38,7 +38,7 @@ export default function OurProcess() {
               <h5 className='text-lg sm:text-xl font-semibold leading-tight text-center sm:text-left'>
                 {step.title}
               </h5>
-              <p className='text-sm sm:text-base lg:text-lg text-[#51626D] font-regular leading-tight text-center sm:text-left'>
+              <p className='text-base sm:text-base lg:text-lg text-[#51626D] font-regular leading-tight text-center sm:text-left'>
                 {step.description}
               </p>
             </div>

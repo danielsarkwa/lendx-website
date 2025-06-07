@@ -3,7 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { Header } from '@/components/header';
 import Footer from '@/components/footer';
-// import CountDownBanner from '@/components/count-down-banner';
+import CountDownBanner from '@/components/count-down-banner';
 
 const switzer = localFont({
   src: '../assets/fonts/Switzer-Variable.woff2',
@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${switzer.variable}`}>
         <div style={{ position: 'sticky', top: 0, zIndex: 50 }}>
-          {/* <CountDownBanner /> */}
+          <CountDownBanner />
           <Header />
         </div>
         <main>{children}</main>

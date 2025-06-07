@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className='bg-[#0F1921]'>
       <div
-        className='w-full mx-auto text-white p-6 flex flex-col gap-8 overflow-clip lg:max-w-[1300px] lg:p-[90px] lg:gap-[150px]'
+        className='w-full mx-auto text-white p-6 pt-16 flex flex-col gap-8 overflow-clip lg:max-w-[1300px] lg:p-[90px] lg:gap-[150px]'
         style={{ position: 'relative' }}
       >
         {/* top items */}
@@ -60,7 +60,6 @@ export default function Footer() {
                   Rankinkatu 5, 20034 Helsinki, Finland
                 </a>
               </p>
-              {/* Add sm-specific styles for contact info here if needed, e.g., sm:text-xs */}
             </div>
           </div>
 

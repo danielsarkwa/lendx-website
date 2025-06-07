@@ -15,13 +15,12 @@ export default function FAQs() {
       className='bg-white overflow-clip'
       style={{ position: 'relative' }}
     >
-      <div className='lg:max-w-[1300px] lg:mx-auto w-full mx-auto flex flex-col lg:flex-row justify-between py-12 lg:py-[90px] px-4'>
+      <div className='lg:max-w-[1300px] lg:mx-auto w-full mx-auto flex flex-col lg:flex-row justify-between py-20 lg:py-[90px] px-4'>
         {/* Section header */}
         <div className='mb-6 lg:mb-0 text-center'>
           <h2 className='text-3xl font-semibold leading-tight lg:text-5xl'>
             FAQs
           </h2>
-          {/* Add sm-specific styles here if needed, e.g., sm:text-2xl */}
         </div>
 
         {/* FAQs container */}
@@ -49,7 +48,6 @@ export default function FAQs() {
             left: '-11px',
           }}
         />
-        {/* Add sm-specific styles for the image here if needed, e.g., sm:width-[150] */}
       </div>
     </section>
   );

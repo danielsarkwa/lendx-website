@@ -123,7 +123,7 @@ export default function CoApplicantForm({
                   coApplicantPhone: error || '',
                 }));
               }}
-              pattern='^\+?[0-9\s]+$' // Basic pattern for phone numbers
+              pattern='^\+?[0-9\s]+$'
             />
             {errors.coApplicantPhone ? (
               <p className='text-red-600 flex items-center gap-1 text-sm lg:text-base'>

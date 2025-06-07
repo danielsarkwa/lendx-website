@@ -51,13 +51,11 @@ export default function CountDownBanner() {
     event = null;
   }
 
-  // Do not render the counter component if the counter from the params is invalid
   if (!event) {
     return null;
   }
   const { title, description, icon: Icon, date } = eventDetails[event];
 
-  // Check if the event is past and return null if it is
   const currentDate = new Date();
   if (currentDate > date) {
     return null;
@@ -69,8 +67,10 @@ export default function CountDownBanner() {
         {/* content */}
         <div className='flex gap-3 sm:gap-5 items-center w-full lg:w-auto'>
           <Icon className='w-8 h-8 sm:w-[35px] sm:h-[35px]' />
-          <div>
-            <h3 className='text-lg sm:text-xl font-semibold'>{title}</h3>
+          <div className='flex flex-col gap-1'>
+            <h3 className='text-base sm:text-xl font-semibold leading-tight'>
+              {title}
+            </h3>
             <p className='text-sm sm:text-lg font-light leading-tight max-w-[300px] sm:max-w-[400px]'>
               {description}
             </p>
@@ -79,18 +79,17 @@ export default function CountDownBanner() {
 
         {/* count down */}
         <div className='order-2 lg:order-1'>
-          <FlipClockCountdown
-            to={date}
-            style={{
-              transform: 'scale(0.5) sm:scale(0.6) lg:scale(0.7)',
-              transformOrigin: 'center',
-            }}
-          />
+          <div className='scale-[0.7] sm:scale-[0.8] lg:scale-[0.85]'>
+            <FlipClockCountdown to={date} />
+          </div>
         </div>
 
         {/* action */}
-        <div className='order-1 lg:order-2 w-full lg:w-auto'>
-          <Button className='bg-white text-foreground w-full lg:w-auto py-2 text-sm sm:text-base'>
+        <div className='order-1 px-10 lg:order-2 w-full lg:w-auto'>
+          <Button
+            className='bg-white text-foreground w-full lg:w-auto py-2 text-sm sm:text-base'
+            size='lg'
+          >
             Lend now
             <ArrowRight className='ml-2 w-4 h-4 sm:w-5 sm:h-5' />
           </Button>
