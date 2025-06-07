@@ -35,7 +35,7 @@ export default function Testimonials() {
         </Button>
       </div>
 
-      {/* testimonial container */}
+      {/* testimonials container */}
       <Carousel
         className='w-full px-4'
         opts={{
