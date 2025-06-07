@@ -64,7 +64,7 @@ export default function CountDownBanner() {
   }
 
   return (
-    <section className='bg-[#504DFF] text-white'>
+    <section className='bg-[#504DFF] text-white '>
       <div className='max-w-[1300px] mx-auto py-4 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8'>
         {/* content */}
         <div className='flex gap-3 sm:gap-5 items-center w-full lg:w-auto'>
@@ -82,7 +82,7 @@ export default function CountDownBanner() {
           <FlipClockCountdown
             to={date}
             style={{
-              transform: 'scale(0.5) sm:scale(0.6) lg:scale(0.7)',
+              transform: 'scale(0.3) sm:scale(0.6) lg:scale(0.7)',
               transformOrigin: 'center',
             }}
           />

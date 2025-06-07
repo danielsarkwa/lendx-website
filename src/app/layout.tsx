@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { Header } from '@/components/header';
-import Footer from '@/components/footer';
+// import Footer from '@/components/footer';
 import CountDownBanner from '@/components/count-down-banner';
 
 const switzer = localFont({
@@ -31,7 +31,7 @@ export default function RootLayout({
           <Header />
         </div>
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
