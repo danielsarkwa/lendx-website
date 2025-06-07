@@ -9,6 +9,7 @@ import { Send } from 'lucide-react';
 import AmountInput from '@/components/amount-input';
 
 import { useState } from 'react';
+import CoApplicantForm from './co-applicant-forn';
 
 export default function LoanForm() {
   const [hasCoApplicant, setHasCoApplicant] = useState(false);
@@ -78,6 +79,7 @@ export default function LoanForm() {
             basic information.
           </p>
         </div>
+        {hasCoApplicant && <CoApplicantForm />}
         <div className='flex flex-col gap-1'>
           <div className='flex items-center gap-2'>
             <Checkbox
