@@ -95,14 +95,14 @@ export default function Footer() {
               >
                 Terms of service
               </a>
-              <span className='bg-[#5A8CB4] h-[4px] w-[4px] rounded-full sm:h-[5px] lg:w-[5px]'></span>
+              <span className='hidden sm:inline-block bg-[#5A8CB4] h-[4px] w-[4px] rounded-full sm:h-[5px] lg:w-[5px]'></span>
               <a
                 href='#'
                 className='text-sm font-[100] hover:underline transition-colors duration-200 hover:opacity-80 sm:text-base'
               >
                 Privacy policy
               </a>
-              <span className='bg-[#5A8CB4] h-[4px] w-[4px] rounded-full sm:h-[5px] lg:w-[5px]'></span>
+              <span className='hidden sm:inline-block bg-[#5A8CB4] h-[4px] w-[4px] rounded-full sm:h-[5px] lg:w-[5px]'></span>
               <a
                 href='#'
                 className='text-sm font-[100] hover:underline transition-colors duration-200 hover:opacity-80 sm:text-base'
