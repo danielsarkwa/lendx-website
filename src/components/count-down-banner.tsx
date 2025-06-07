@@ -64,27 +64,35 @@ export default function CountDownBanner() {
   }
 
   return (
-    <section className=' bg-[#504DFF]'>
-      <div className='max-w-[1300px] mx-auto text-white py-1 flex items-center justify-between'>
+    <section className='bg-[#504DFF] text-white'>
+      <div className='max-w-[1300px] mx-auto py-4 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8'>
         {/* content */}
-        <div className='flex gap-5 items-center'>
-          <Icon className='w-[35px] h-[35px]' />
+        <div className='flex gap-3 sm:gap-5 items-center w-full lg:w-auto'>
+          <Icon className='w-8 h-8 sm:w-[35px] sm:h-[35px]' />
           <div>
-            <h3 className='text-xl font-semibold'>{title}</h3>
-            <p className='text-lg font-light leading-tight max-w-[400px]'>
+            <h3 className='text-lg sm:text-xl font-semibold'>{title}</h3>
+            <p className='text-sm sm:text-lg font-light leading-tight max-w-[300px] sm:max-w-[400px]'>
               {description}
             </p>
           </div>
         </div>
 
         {/* count down */}
-        <FlipClockCountdown to={date} style={{ transform: 'scale(0.7)' }} />
+        <div className='order-2 lg:order-1'>
+          <FlipClockCountdown
+            to={date}
+            style={{
+              transform: 'scale(0.5) sm:scale(0.6) lg:scale(0.7)',
+              transformOrigin: 'center',
+            }}
+          />
+        </div>
 
         {/* action */}
-        <div>
-          <Button className='bg-white text-foreground'>
+        <div className='order-1 lg:order-2 w-full lg:w-auto'>
+          <Button className='bg-white text-foreground w-full lg:w-auto py-2 text-sm sm:text-base'>
             Lend now
-            <ArrowRight />
+            <ArrowRight className='ml-2 w-4 h-4 sm:w-5 sm:h-5' />
           </Button>
         </div>
       </div>
