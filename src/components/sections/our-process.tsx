@@ -8,7 +8,10 @@ export default function OurProcess() {
       className='bg-[#CEF8F4] rounded-[50px] py-[90px] px-[100px] flex flex-col items-center gap-[50px]'
     >
       {/* section header */}
-      <div className='flex flex-col items-center w-fit'>
+      <div
+        className='flex flex-col items-center w-fit'
+        style={{ position: 'relative' }}
+      >
         <h2 className='text-5xl font-semibold leading-tight text-center'>
           How it works
         </h2>
@@ -16,6 +19,17 @@ export default function OurProcess() {
           Get your loan approved and deposited in just 3 days — fast, simple,
           and secure.
         </p>
+        <Image
+          src='/graphics/pen-scribble-2.svg'
+          alt='Pen Scribble'
+          width={196}
+          height={15}
+          style={{
+            position: 'absolute',
+            top: '50px',
+            right: '70px',
+          }}
+        />
       </div>
 
       {/* steps container */}

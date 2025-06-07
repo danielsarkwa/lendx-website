@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { testimonials } from '@/constants/testimonials';
 import {
@@ -48,30 +49,9 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <CarouselItem
               key={index}
-              className='md:basis-1/2 lg:basis-1/3 overflow-clip rounded-[10px]'
+              className='md:basis-1/2 lg:basis-1/3 rounded-[10px]'
             >
-              <div
-                className='flex-1 min-h-[573px] overflow-clip rounded-[10px] text-white flex flex-col'
-                style={{ position: 'relative' }}
-              >
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  fill
-                  className='object-cover rounded-[10px]'
-                  style={{ position: 'absolute', zIndex: -1 }}
-                />
-                <div className='flex flex-col justify-end min-h-[573px] py-[25px] px-[30px] gap-2.5'>
-                  <p className='text-lg'>&quot;{testimonial.message}&quot;</p>
-                  <div className='border-b border-1 border-dashed border-[#3E3C3C] [border-dash-array:6_6]'></div>
-                  <div className='flex flex-col'>
-                    <p className='text-lg'>{testimonial.name}</p>
-                    <p className='text-sm text-[#AEAEAE]'>
-                      {testimonial.occupation}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <Testimonial item={testimonial} />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -81,5 +61,62 @@ export default function Testimonials() {
         </div>
       </Carousel>
     </section>
+  );
+}
+
+function Testimonial({ item }: { item: (typeof testimonials)[0] }) {
+  const cardVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.06 },
+  };
+
+  const textVariants = {
+    initial: { y: 0 },
+    hover: { y: -10 },
+  };
+
+  return (
+    <motion.div
+      className='flex-1 min-h-[573px] rounded-[10px] text-white flex flex-col'
+      style={{ position: 'relative', overflow: 'hidden' }}
+      initial='initial'
+      whileHover='hover'
+    >
+      <motion.div
+        variants={cardVariants}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          pointerEvents: 'auto',
+        }}
+      >
+        <Image
+          src={item.image}
+          alt={item.name}
+          fill
+          className='object-cover rounded-[10px]'
+        />
+      </motion.div>
+      <motion.div
+        className='flex flex-col justify-end min-h-[573px] py-[25px] px-[30px] gap-2.5'
+        style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}
+        variants={textVariants}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+      >
+        <p className='text-lg pointer-events-auto'>
+          &quot;{item.message}&quot;
+        </p>
+        <div className='border-b border-1 border-dashed border-[#3E3C3C] [border-dash-array:6_6]'></div>
+        <div className='flex flex-col pointer-events-auto'>
+          <p className='text-lg'>{item.name}</p>
+          <p className='text-sm text-[#AEAEAE]'>{item.occupation}</p>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -2,9 +2,15 @@
 
 import { ArrowRight, PartyPopper, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
+import dynamic from 'next/dynamic';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import { useSearchParams } from 'next/navigation';
+
+// Dynamically import FlipClockCountdown with SSR disabled
+const FlipClockCountdown = dynamic(
+  () => import('@leenguyen/react-flip-clock-countdown'),
+  { ssr: false }
+);
 
 // these values are used from the URL search params
 // e.g. ?counter=midsummereve
