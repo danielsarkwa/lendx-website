@@ -15,16 +15,17 @@ export default function FAQs() {
       className='bg-white overflow-clip'
       style={{ position: 'relative' }}
     >
-      <div className='max-w-[1300px] mx-auto flex justify-between py-[90px]'>
-        {/* section header */}
-        <div className=''>
-          <h2 className='text-5xl font-semibold leading-tight text-center'>
+      <div className='lg:max-w-[1300px] lg:mx-auto w-full mx-auto flex flex-col lg:flex-row justify-between py-12 lg:py-[90px] px-4'>
+        {/* Section header */}
+        <div className='mb-6 lg:mb-0 text-center'>
+          <h2 className='text-3xl font-semibold leading-tight lg:text-5xl'>
             FAQs
           </h2>
+          {/* Add sm-specific styles here if needed, e.g., sm:text-2xl */}
         </div>
 
         {/* FAQs container */}
-        <div className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-3 w-full lg:w-auto'>
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}
@@ -38,9 +39,9 @@ export default function FAQs() {
         <Image
           src='/illustrations/direction.svg'
           alt='FAQs Illustration'
-          width={361}
-          height={383}
-          className='object-contain'
+          width={200}
+          height={212}
+          className='object-contain hidden lg:block'
           style={{
             position: 'absolute',
             zIndex: 0,
@@ -48,6 +49,7 @@ export default function FAQs() {
             left: '-11px',
           }}
         />
+        {/* Add sm-specific styles for the image here if needed, e.g., sm:width-[150] */}
       </div>
     </section>
   );
@@ -65,18 +67,18 @@ function FAQItem({
   return (
     <motion.div
       onClick={onToggle}
-      className='cursor-pointer w-[700px] bg-[#F7F7F7] rounded-[10px] p-6 flex justify-between items-center gap-4 transition-colors duration-250 hover:bg-[#f2f1f1]'
+      className='cursor-pointer w-full bg-[#F7F7F7] rounded-[10px] p-4 flex justify-between items-center gap-4 transition-colors duration-250 hover:bg-[#f2f1f1] lg:w-[700px] lg:p-6'
       layout
       transition={{ layout: { duration: 0.2, ease: 'easeOut' } }}
     >
       <div className='flex-1 flex flex-col gap-1.5'>
-        <h3 className='text-lg text-foreground leading-tight'>
+        <h3 className='text-base text-foreground leading-tight lg:text-lg'>
           {faq.question}
         </h3>
         <AnimatePresence>
           {isOpen && (
             <motion.p
-              className='text-lg text-[#647581] leading-tight'
+              className='text-base text-[#647581] leading-tight lg:text-lg'
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -97,7 +99,7 @@ function FAQItem({
               exit={{ opacity: 0, rotate: -45 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
             >
-              <Minus className='w-6 h-6 text-primary cursor-pointer' />
+              <Minus className='w-5 h-5 text-primary cursor-pointer lg:w-6 lg:h-6' />
             </motion.div>
           ) : (
             <motion.div
@@ -107,7 +109,7 @@ function FAQItem({
               exit={{ opacity: 0, rotate: 45 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
             >
-              <Plus className='w-6 h-6 text-primary cursor-pointer' />
+              <Plus className='w-5 h-5 text-primary cursor-pointer lg:w-6 lg:h-6' />
             </motion.div>
           )}
         </AnimatePresence>

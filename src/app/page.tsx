@@ -1,4 +1,4 @@
-// import FAQs from '@/components/sections/faqs';
+import FAQs from '@/components/sections/faqs';
 // import Hero from '@/components/sections/hero';
 import OurProcess from '@/components/sections/our-process';
 // import Partners from '@/components/sections/partners';
@@ -11,7 +11,7 @@ export default function Home() {
       {/* <Partners /> */}
       <OurProcess />
       {/* <Testimonials /> */}
-      {/* <FAQs /> */}
+      <FAQs />
     </>
   );
 }
