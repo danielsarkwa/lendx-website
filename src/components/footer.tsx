@@ -127,11 +127,10 @@ export default function Footer() {
                   alt={item.platform}
                   width={20}
                   height={20}
-                  className='sm:w-[24px] sm:h-[24px]'
+                  className='w-[24px] h-[24px]'
                 />
               </a>
             ))}
-            {/* Add sm-specific styles for social icons here if needed, e.g., sm:gap-4 */}
           </div>
         </div>
 
@@ -148,7 +147,6 @@ export default function Footer() {
             zIndex: 0,
           }}
         />
-        {/* Add sm-specific styles for the background image here if needed, e.g., sm:block sm:bottom-0 */}
       </div>
     </footer>
   );

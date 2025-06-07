@@ -1,5 +1,5 @@
 import FAQs from '@/components/sections/faqs';
-// import Hero from '@/components/sections/hero';
+import Hero from '@/components/sections/hero';
 import OurProcess from '@/components/sections/our-process';
 import Partners from '@/components/sections/partners';
 // import Testimonials from '@/components/sections/testimonials';
@@ -7,7 +7,7 @@ import Partners from '@/components/sections/partners';
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
+      <Hero />
       <Partners />
       <OurProcess />
       {/* <Testimonials /> */}

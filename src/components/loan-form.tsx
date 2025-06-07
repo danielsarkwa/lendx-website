@@ -53,24 +53,29 @@ export default function LoanForm() {
   };
 
   return (
-    <div className='bg-white rounded-[10px] shadow-[0_4px_12.8px_0px_rgba(124,124,124,0.1)] py-[30px] px-[35px] flex flex-col gap-[30px]'>
+    <div className='bg-white rounded-[8px] shadow-[0_4px_12.8px_0px_rgba(124,124,124,0.1)] p-4 flex flex-col gap-4 lg:rounded-[10px] lg:p-[30px] lg:px-[35px] lg:gap-[30px]'>
       {/* header */}
       <div className='flex flex-col gap-0.5'>
-        <h2 className='text-[32px] font-semibold text-foreground leading-tight'>
+        <h2 className='text-xl font-semibold text-foreground leading-tight lg:text-[32px]'>
           Take a loan
         </h2>
-        <p className='text-lg text-[#647581] font-regular leading-tight'>
+        <p className='text-base text-[#647581] font-regular leading-tight lg:text-lg'>
           Complete this form to take a loan. Your information will be reviewed
           and approved in 3 days max.
         </p>
+        {/* Add sm-specific styles for header here if needed, e.g., sm:text-base */}
       </div>
 
       {/* form */}
-      <form className='flex flex-col gap-[30px]'>
+      <form className='flex flex-col gap-4 lg:gap-[30px]'>
         <AmountInput value={amount} onChange={setAmount} />
+        {/* Ensure AmountInput is responsive; add sm-specific styles if needed */}
 
-        <div className='flex flex-col gap-1.5'>
-          <Label htmlFor='name' className='text-foreground'>
+        <div className='flex flex-col gap-1'>
+          <Label
+            htmlFor='name'
+            className='text-foreground text-sm lg:text-base'
+          >
             Full name *
           </Label>
           <div className='flex flex-col gap-0.5'>
@@ -78,7 +83,7 @@ export default function LoanForm() {
               type='text'
               required
               placeholder='eg: Janiel Jokkinen'
-              className='py-5 text-[16px] placeholder:text-[16px]'
+              className='py-3 text-sm placeholder:text-sm lg:py-5 lg:text-[16px] lg:placeholder:text-[16px]'
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               onBlur={() => {
@@ -87,14 +92,19 @@ export default function LoanForm() {
               }}
             />
             {errors.fullName && (
-              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+              <p className='text-red-600 flex items-center gap-1 text-xs lg:text-[15px]'>
                 {errors.fullName}
               </p>
             )}
           </div>
+          {/* Add sm-specific styles for name input here if needed, e.g., sm:text-xs */}
         </div>
-        <div className='flex flex-col gap-1.5'>
-          <Label htmlFor='email' className='text-foreground'>
+
+        <div className='flex flex-col gap-1'>
+          <Label
+            htmlFor='email'
+            className='text-foreground text-sm lg:text-base'
+          >
             Email address *
           </Label>
           <div className='flex flex-col gap-0.5'>
@@ -102,7 +112,7 @@ export default function LoanForm() {
               type='email'
               required
               placeholder='eg: janiel@mail.com'
-              className='py-5 text-[16px] placeholder:text-[16px]'
+              className='py-3 text-sm placeholder:text-sm lg:py-5 lg:text-[16px] lg:placeholder:text-[16px]'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => {
@@ -111,14 +121,19 @@ export default function LoanForm() {
               }}
             />
             {errors.email && (
-              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+              <p className='text-red-600 flex items-center gap-1 text-xs lg:text-[15px]'>
                 {errors.email}
               </p>
             )}
           </div>
+          {/* Add sm-specific styles for email input here if needed, e.g., sm:text-xs */}
         </div>
-        <div className='flex flex-col gap-1.5'>
-          <Label htmlFor='phone' className='text-foreground'>
+
+        <div className='flex flex-col gap-1'>
+          <Label
+            htmlFor='phone'
+            className='text-foreground text-sm lg:text-base'
+          >
             Phone number *
           </Label>
           <div className='flex flex-col gap-0.5'>
@@ -126,43 +141,47 @@ export default function LoanForm() {
               type='tel'
               required
               placeholder='eg: +358 44 857 6689'
-              className='py-5 text-[16px] placeholder:text-[16px]'
+              className='py-3 text-sm placeholder:text-sm lg:py-5 lg:text-[16px] lg:placeholder:text-[16px]'
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               onBlur={() => {
                 const error = validatePhone(phone);
                 setErrors((prev) => ({ ...prev, phone: error || '' }));
               }}
-              pattern='^\+?[0-9\s]+$' // Basic pattern for phone numbers
+              pattern='^\+?[0-9\s]+$'
             />
             {errors.phone ? (
-              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+              <p className='text-red-600 flex items-center gap-1 text-xs lg:text-[15px]'>
                 {errors.phone}
               </p>
             ) : (
-              <p className='text-[15px] text-muted-foreground'>
+              <p className='text-xs text-muted-foreground lg:text-[15px]'>
                 Include country code
               </p>
             )}
           </div>
+          {/* Add sm-specific styles for phone input here if needed, e.g., sm:text-xs */}
         </div>
+
         <div className='flex flex-col gap-1'>
           <div className='flex items-center gap-2'>
             <Checkbox
               id='terms-1'
-              className='w-5 h-5'
+              className='w-4 h-4 lg:w-5 lg:h-5'
               checked={hasCoApplicant}
               onCheckedChange={(checked) => setHasCoApplicant(checked === true)}
             />
-            <Label htmlFor='terms-1' className='text-base'>
+            <Label htmlFor='terms-1' className='text-sm lg:text-base'>
               I have a co-applicant
             </Label>
           </div>
-          <p className='pl-7 text-muted-foreground leading-tight'>
+          <p className='pl-6 text-muted-foreground leading-tight text-xs lg:pl-7 lg:text-sm'>
             If you have a co-applicant, you can check this box and provide their
             basic information.
           </p>
+          {/* Add sm-specific styles for co-applicant checkbox here if needed, e.g., sm:text-xs */}
         </div>
+
         {hasCoApplicant && (
           <CoApplicantForm
             fullName={coApplicantFullName}
@@ -176,34 +195,39 @@ export default function LoanForm() {
             setHasCoApplicant={setHasCoApplicant}
           />
         )}
+        {/* Ensure CoApplicantForm is responsive; add sm-specific styles if needed */}
+
         <div className='flex flex-col gap-1'>
           <div className='flex items-center gap-2'>
             <Checkbox
               id='terms-2'
               required
-              className='w-5 h-5'
+              className='w-4 h-4 lg:w-5 lg:h-5'
               checked={acceptedTerms}
               onCheckedChange={(checked) => setAcceptedTerms(checked === true)}
             />
-            <Label htmlFor='terms-2' className='text-base'>
+            <Label htmlFor='terms-2' className='text-sm lg:text-base'>
               Accept terms and conditions
             </Label>
           </div>
-          <p className='pl-7 text-muted-foreground leading-tight'>
+          <p className='pl-6 text-muted-foreground leading-tight text-xs lg:pl-7 lg:text-sm'>
             By clicking this checkbox, you agree to the terms and conditions.
           </p>
+          {/* Add sm-specific styles for terms checkbox here if needed, e.g., sm:text-xs */}
         </div>
 
         <div className='border-b border-dashed border-[#ECE9E9] [border-dash-array:6_6]'></div>
 
         {/* payment summary */}
         <PaymentSummary amount={amount} />
+        {/* Ensure PaymentSummary is responsive; add sm-specific styles if needed */}
 
-        <div className=''>
+        <div>
           <Button
             type='submit'
-            size='lg'
+            size='sm'
             onClick={handleSubmit}
+            className='lg:size-lg'
             disabled={
               !fullName ||
               !email ||
@@ -223,8 +247,9 @@ export default function LoanForm() {
             }
           >
             Submit application
-            <Send />
+            <Send className='w-4 h-4 lg:w-5 lg:h-5' />
           </Button>
+          {/* Add sm-specific styles for button here if needed, e.g., sm:text-sm */}
         </div>
       </form>
     </div>
