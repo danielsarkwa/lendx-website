@@ -30,7 +30,7 @@ export default function Hero() {
               alt='Pen Scribble'
               width={271}
               height={19}
-              className='w-[200px] left-0 top-[37px] lg:top-[60px]'
+              className='w-[200px] left-0 top-[37px] lg:top-[64px] lg:w-[300px]'
               style={{
                 position: 'absolute',
               }}
