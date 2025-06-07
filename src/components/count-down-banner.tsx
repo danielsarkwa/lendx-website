@@ -2,11 +2,12 @@
 
 import { ArrowRight, PartyPopper, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getCountdown } from '@/util/calculate-count-down';
-import { useEffect, useState } from 'react';
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
+import { useSearchParams } from 'next/navigation';
 
+// these values are used from the URL search params
+// e.g. ?counter=midsummereve
 export enum events {
   MidsummerEve = 'midsummereve',
   NewYear = 'newyear',
@@ -29,24 +30,32 @@ const eventDetails = {
   },
 };
 
-export default function CountDownBanner({
-  event = events.MidsummerEve,
-}: {
-  event?: events;
-}) {
+export default function CountDownBanner() {
+  const searchParams = useSearchParams();
+  const counter = searchParams.get('counter');
+
+  // Use MidsummerEve as default if no counter is provided; return null for invalid counter
+  let event: events | null;
+
+  if (counter && Object.values(events).includes(counter as events)) {
+    event = counter as events;
+  } else if (counter === null) {
+    event = events.MidsummerEve;
+  } else {
+    event = null;
+  }
+
+  // Do not render the counter component if the counter from the params is invalid
+  if (!event) {
+    return null;
+  }
   const { title, description, icon: Icon, date } = eventDetails[event];
-  const [countdown, setCountdown] = useState(getCountdown(date));
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown(getCountdown(date));
-    }, 1000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(timer);
-  }, [date]);
-
-  const { days, hours, minutes, seconds } = countdown;
+  // Check if the event is past and return null if it is
+  const currentDate = new Date();
+  if (currentDate > date) {
+    return null;
+  }
 
   return (
     <section className=' bg-[#504DFF]'>
@@ -63,25 +72,7 @@ export default function CountDownBanner({
         </div>
 
         {/* count down */}
-        {/* <div className='flex items-center justify-between gap-6'>
-          <div className='flex flex-col items-center min-w-[45px]'>
-            <p className='font-bold text-4xl leading-8'>{days}</p>
-            <p className='text-[15px] font-[100]'>days</p>
-          </div>
-          <div className='flex flex-col items-center min-w-[45px]'>
-            <p className='font-bold text-4xl leading-8'>{hours}</p>
-            <p className='text-[15px] font-[100]'>hrs</p>
-          </div>
-          <div className='flex flex-col items-center min-w-[45px]'>
-            <p className='font-bold text-4xl leading-8'>{minutes}</p>
-            <p className='text-[15px] font-[100]'>mins</p>
-          </div>
-          <div className='flex flex-col items-center min-w-[45px]'>
-            <p className='font-bold text-4xl leading-8'>{seconds}</p>
-            <p className='text-[15px] font-[100]'>secs</p>
-          </div>
-        </div> */}
-        <FlipClockCountdown to={date} />
+        <FlipClockCountdown to={date} style={{ transform: 'scale(0.8)' }} />
 
         {/* action */}
         <div>
