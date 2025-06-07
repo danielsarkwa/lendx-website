@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { testimonials } from '@/constants/testimonials';
@@ -8,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 export default function Testimonials() {
   return (
@@ -35,10 +38,18 @@ export default function Testimonials() {
         opts={{
           loop: true,
         }}
+        plugins={[
+          Autoplay({
+            delay: 6000,
+          }),
+        ]}
       >
         <CarouselContent>
           {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
+            <CarouselItem
+              key={index}
+              className='md:basis-1/2 lg:basis-1/3 overflow-clip rounded-[10px]'
+            >
               <div
                 className='flex-1 min-h-[573px] overflow-clip rounded-[10px] text-white flex flex-col'
                 style={{ position: 'relative' }}
@@ -50,7 +61,7 @@ export default function Testimonials() {
                   className='object-cover rounded-[10px]'
                   style={{ position: 'absolute', zIndex: -1 }}
                 />
-                <div className='flex flex-col justify-end min-h-[573px] py-[25px] px-[30px] gap-2.5 border'>
+                <div className='flex flex-col justify-end min-h-[573px] py-[25px] px-[30px] gap-2.5'>
                   <p className='text-lg'>&quot;{testimonial.message}&quot;</p>
                   <div className='border-b border-1 border-dashed border-[#3E3C3C] [border-dash-array:6_6]'></div>
                   <div className='flex flex-col'>
@@ -64,8 +75,10 @@ export default function Testimonials() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className='flex gap-6 mt-8'>
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
       </Carousel>
     </section>
   );
