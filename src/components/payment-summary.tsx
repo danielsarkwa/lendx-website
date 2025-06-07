@@ -1,4 +1,4 @@
-import calculateMonthlyPayment from '@/util/calculate-monthly-payment';
+import calculateMonthlyPayment from '@/utils/calculate-monthly-payment';
 
 export default function PaymentSummary({ amount }: { amount: number }) {
   const monthlyPayment = calculateMonthlyPayment(amount);

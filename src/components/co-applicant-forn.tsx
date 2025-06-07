@@ -1,9 +1,40 @@
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import { Trash2 } from 'lucide-react';
+import {
+  validateFullName,
+  validateEmail,
+  validatePhone,
+} from '@/utils/form-validation';
 
-export default function CoApplicantForm() {
+interface CoApplicantFormProps {
+  fullName: string;
+  setFullName: (value: string) => void;
+  email: string;
+  setEmail: (value: string) => void;
+  phone: string;
+  setPhone: (value: string) => void;
+  errors: {
+    coApplicantFullName: string;
+    coApplicantEmail: string;
+    coApplicantPhone: string;
+  };
+  setErrors: (errors: any) => void;
+  setHasCoApplicant: (value: boolean) => void;
+}
+
+export default function CoApplicantForm({
+  fullName,
+  setFullName,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+  errors,
+  setErrors,
+  setHasCoApplicant,
+}: CoApplicantFormProps) {
   return (
     <div className='bg-[#F8F7F7] rounded-[10px] py-4 px-[18px] flex flex-col gap-6'>
       {/* header */}
@@ -22,36 +53,103 @@ export default function CoApplicantForm() {
           <Label htmlFor='name' className='text-foreground'>
             Full name *
           </Label>
-          <Input
-            type='text'
-            placeholder='eg: Janiel Jokkinen'
-            className='py-5 text-[16px] placeholder:text-[16px] bg-white'
-          />
+          <div className='flex flex-col gap-0.5'>
+            <Input
+              type='text'
+              required
+              placeholder='eg: Janiel Jokkinen'
+              className='py-5 text-[16px] placeholder:text-[16px] bg-white'
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              onBlur={() => {
+                const error = validateFullName(fullName);
+                setErrors((prev) => ({
+                  ...prev,
+                  coApplicantFullName: error || '',
+                }));
+              }}
+            />
+            {errors.coApplicantFullName && (
+              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+                {errors.coApplicantFullName}
+              </p>
+            )}
+          </div>
         </div>
         <div className='flex flex-col gap-1.5'>
           <Label htmlFor='email' className='text-foreground'>
             Email address *
           </Label>
-          <Input
-            type='email'
-            placeholder='eg: janiel@mail.com'
-            className='py-5 text-[16px] placeholder:text-[16px] bg-white'
-          />
+          <div className='flex flex-col gap-0.5'>
+            <Input
+              type='email'
+              required
+              placeholder='eg: janiel@mail.com'
+              className='py-5 text-[16px] placeholder:text-[16px] bg-white'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onBlur={() => {
+                const error = validateEmail(email);
+                setErrors((prev) => ({
+                  ...prev,
+                  coApplicantEmail: error || '',
+                }));
+              }}
+            />
+            {errors.coApplicantEmail && (
+              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+                {errors.coApplicantEmail}
+              </p>
+            )}
+          </div>
         </div>
         <div className='flex flex-col gap-1.5'>
           <Label htmlFor='phone' className='text-foreground'>
             Phone number *
           </Label>
-          <Input
-            type='tel'
-            placeholder='eg: +358 44 857 6689'
-            className='py-5 text-[16px] placeholder:text-[16px] bg-white'
-          />
+          <div className='flex flex-col gap-0.5'>
+            <Input
+              type='tel'
+              required
+              placeholder='eg: +358 44 857 6689'
+              className='py-5 text-[16px] placeholder:text-[16px] bg-white'
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              onBlur={() => {
+                const error = validatePhone(phone);
+                setErrors((prev) => ({
+                  ...prev,
+                  coApplicantPhone: error || '',
+                }));
+              }}
+              pattern='^\+?[0-9\s]+$' // Basic pattern for phone numbers
+            />
+            {errors.coApplicantPhone ? (
+              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
+                {errors.coApplicantPhone}
+              </p>
+            ) : (
+              <p className='text-[15px] text-muted-foreground'>
+                Include country code
+              </p>
+            )}
+          </div>
         </div>
         <div className=''>
           <Button
             size='lg'
             variant='destructive'
+            onClick={() => {
+              setHasCoApplicant(false);
+              setFullName('');
+              setEmail('');
+              setPhone('');
+              setErrors({
+                coApplicantFullName: '',
+                coApplicantEmail: '',
+                coApplicantPhone: '',
+              });
+            }}
             className='bg-[#FAD6D8] text-[#CD1B24] hover:bg-[#FAD6D8]'
           >
             Remove co-applicant
