@@ -14,6 +14,10 @@ import CoApplicantForm from './co-applicant-forn';
 export default function LoanForm() {
   const [hasCoApplicant, setHasCoApplicant] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [amount, setAmount] = useState(0);
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
 
   return (
     <div className='bg-white rounded-[10px] shadow-[0_4px_12.8px_0px_rgba(124,124,124,0.1)] py-[30px] px-[35px] flex flex-col gap-[30px]'>
@@ -30,7 +34,7 @@ export default function LoanForm() {
 
       {/* form */}
       <form className='flex flex-col gap-[30px]'>
-        <AmountInput />
+        <AmountInput value={amount} onChange={setAmount} />
 
         <div className='flex flex-col gap-1.5'>
           <Label htmlFor='name' className='text-foreground'>
@@ -40,6 +44,8 @@ export default function LoanForm() {
             type='text'
             placeholder='eg: Janiel Jokkinen'
             className='py-5 text-[16px] placeholder:text-[16px]'
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
           />
         </div>
         <div className='flex flex-col gap-1.5'>
@@ -50,17 +56,24 @@ export default function LoanForm() {
             type='email'
             placeholder='eg: janiel@mail.com'
             className='py-5 text-[16px] placeholder:text-[16px]'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className='flex flex-col gap-1.5'>
           <Label htmlFor='phone' className='text-foreground'>
             Phone number *
           </Label>
-          <Input
-            type='tel'
-            placeholder='eg: +358 44 857 6689'
-            className='py-5 text-[16px] placeholder:text-[16px]'
-          />
+          <div className='flex flex-col gap-0.5'>
+            <Input
+              type='tel'
+              placeholder='eg: +358 44 857 6689'
+              className='py-5 text-[16px] placeholder:text-[16px]'
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <p className='text-[15px] text-muted-foreground'>Include country code</p>
+          </div>
         </div>
         <div className='flex flex-col gap-1'>
           <div className='flex items-center gap-2'>
@@ -100,7 +113,7 @@ export default function LoanForm() {
         <div className='border-b border-dashed border-[#ECE9E9] [border-dash-array:6_6]'></div>
 
         {/* payment summary */}
-        <PaymentSummary amount={5000} />
+        <PaymentSummary amount={amount} />
 
         <div className=''>
           <Button type='submit' size='lg'>
