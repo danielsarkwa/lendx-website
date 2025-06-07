@@ -72,10 +72,7 @@ export default function LoanForm() {
         {/* Ensure AmountInput is responsive; add sm-specific styles if needed */}
 
         <div className='flex flex-col gap-1'>
-          <Label
-            htmlFor='name'
-            className='text-foreground text-sm lg:text-base'
-          >
+          <Label htmlFor='name' className='text-foreground'>
             Full name *
           </Label>
           <div className='flex flex-col gap-0.5'>
@@ -83,7 +80,7 @@ export default function LoanForm() {
               type='text'
               required
               placeholder='eg: Janiel Jokkinen'
-              className='py-3 text-sm placeholder:text-sm lg:py-5 lg:text-[16px] lg:placeholder:text-[16px]'
+              className='py-5 text-[16px] placeholder:text-[16px]'
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               onBlur={() => {
@@ -92,12 +89,11 @@ export default function LoanForm() {
               }}
             />
             {errors.fullName && (
-              <p className='text-red-600 flex items-center gap-1 text-xs lg:text-[15px]'>
+              <p className='text-red-600 flex items-center gap-1 text-[15px]'>
                 {errors.fullName}
               </p>
             )}
           </div>
-          {/* Add sm-specific styles for name input here if needed, e.g., sm:text-xs */}
         </div>
 
         <div className='flex flex-col gap-1'>
