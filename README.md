@@ -2,10 +2,12 @@
 
 This project is a landing page for a fictional fintech product as a tool to help customers easily learn more about the fintech product and quickly apply for loans.
 
-## IMPORTANT NOTES
+![Mockup](https://res.cloudinary.com/dqmmpbow6/image/upload/v1749201481/danielsarkwa-com-v2/portfolio-assets/lendx-landing-page/lendx-1_rrkpak.png)
 
-- [View the live website](https://lendx-website.vercel.app/)
-- [Design process documentation](https://danielsarkwa.com/projects/lendx-landing-page): Explore the detailed design process on my portfolio website. The portfolio outlines the UX/UI design journey, including wireframes and prototypes created in Figma as well as the decision making behind the page.
+## IMPORTANT INFO
+
+- View the live website at -- [lendx-website.vercel.app](https://lendx-website.vercel.app/)
+- Quick <2 mins video of my design process for this test on [Loom]()
 
 ## Features
 
@@ -65,6 +67,21 @@ To run the project locally, follow these steps:
 4. **Test the Countdown**:
    - Visit `http://localhost:3000` for the default Midsummer Eve countdown.
    - Visit `http://localhost:3000?counter=newyear` for the New Year's Eve countdown.
+
+
+## Project Structure and Directory
+
+```
+src/
+├── app/                  # Houses the core application files and global configurations
+├── assets/               # Stores static assets used throughout the project
+├── components/           # Contains reusable React components for modular development
+├── sections/             # Holds section-specific components for different page sections
+├── ui/                   # Manages user interface components for interactive elements
+├── constants/            # Stores constant values and configurations in TypeScript files
+├── lib/                  # Contains library files for shared utilities and logic
+└── utils/                # Includes utility functions to support various project functionalities
+```
 
 ## Deployment
 

@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${switzer.variable}`}>
-        <div style={{ position: 'sticky', top: 0, zIndex: 50 }}>
+        <div style={{ position: 'sticky', top: 0, zIndex: 50 }} className='transition-all ease-linear'>
           <CountDownBanner />
           <Header />
         </div>

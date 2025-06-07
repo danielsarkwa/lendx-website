@@ -1,11 +1,11 @@
 'use client';
 
-import { ArrowRight, PartyPopper, Sun, X } from 'lucide-react';
+import { ArrowRight, Loader2, PartyPopper, Sun, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import dynamic from 'next/dynamic';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 
 // Dynamically import FlipClockCountdown with SSR disabled
 const FlipClockCountdown = dynamic(
@@ -37,7 +37,7 @@ const eventDetails = {
   },
 };
 
-export default function CountDownBanner() {
+function CountDownBannerInner() {
   const searchParams = useSearchParams();
   const counter = searchParams.get('counter');
   const [isDismissed, setIsDismissed] = useState(false);
@@ -112,5 +112,20 @@ export default function CountDownBanner() {
         </div>
       </div>
     </section>
+  );
+}
+
+export default function CountDownBanner() {
+  return (
+    <Suspense
+      fallback={
+        <div className='flex items-center justify-center h-24'>
+          <Loader2 className='animate-spin w-4 h-4' />
+          <span className='ml-2'>Loading banner...</span>
+        </div>
+      }
+    >
+      <CountDownBannerInner />
+    </Suspense>
   );
 }
