@@ -82,7 +82,7 @@ export default function CountDownBanner() {
           <FlipClockCountdown
             to={date}
             style={{
-              transform: 'scale(0.3) sm:scale(0.6) lg:scale(0.7)',
+              transform: 'scale(0.5) sm:scale(0.6) lg:scale(0.7)',
               transformOrigin: 'center',
             }}
           />
