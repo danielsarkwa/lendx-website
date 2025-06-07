@@ -23,7 +23,7 @@ export function Header() {
         isScrolled ? 'shadow-xs' : ''
       }`}
     >
-      <div className='container mx-auto flex items-center justify-between py-4 px-[100px]'>
+      <div className='max-w-[1300px] mx-auto flex items-center justify-between py-4'>
         {/* logo */}
         <div>
           <a href='#'>

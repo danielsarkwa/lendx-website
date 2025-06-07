@@ -5,7 +5,7 @@ export default function OurProcess() {
   return (
     <section
       id='our-process'
-      className='bg-[#CEF8F4] rounded-[50px] py-[90px] px-[100px] flex flex-col items-center gap-[50px]'
+      className='max-w-[1300px] mx-auto bg-[#CEF8F4] rounded-[50px] py-[90px] px-[100px] flex flex-col items-center gap-[50px]'
     >
       {/* section header */}
       <div

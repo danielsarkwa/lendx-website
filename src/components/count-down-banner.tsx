@@ -65,7 +65,7 @@ export default function CountDownBanner() {
 
   return (
     <section className=' bg-[#504DFF]'>
-      <div className='container mx-auto text-white py-5 px-[100px] flex items-center justify-between'>
+      <div className='max-w-[1300px] mx-auto text-white py-1 flex items-center justify-between'>
         {/* content */}
         <div className='flex gap-5 items-center'>
           <Icon className='w-[35px] h-[35px]' />
@@ -78,7 +78,7 @@ export default function CountDownBanner() {
         </div>
 
         {/* count down */}
-        <FlipClockCountdown to={date} style={{ transform: 'scale(0.8)' }} />
+        <FlipClockCountdown to={date} style={{ transform: 'scale(0.7)' }} />
 
         {/* action */}
         <div>

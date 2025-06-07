@@ -12,41 +12,43 @@ export default function FAQs() {
   return (
     <section
       id='faqs'
-      className='flex justify-between py-[90px] px-[100px] bg-white overflow-clip'
+      className='bg-white overflow-clip'
       style={{ position: 'relative' }}
     >
-      {/* section header */}
-      <div className=''>
-        <h2 className='text-5xl font-semibold leading-tight text-center'>
-          FAQs
-        </h2>
-      </div>
+      <div className='max-w-[1300px] mx-auto flex justify-between py-[90px]'>
+        {/* section header */}
+        <div className=''>
+          <h2 className='text-5xl font-semibold leading-tight text-center'>
+            FAQs
+          </h2>
+        </div>
 
-      {/* FAQs container */}
-      <div className='flex flex-col gap-3'>
-        {faqs.map((faq, index) => (
-          <FAQItem
-            key={index}
-            faq={faq}
-            isOpen={openIndex === index}
-            onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-          />
-        ))}
-      </div>
+        {/* FAQs container */}
+        <div className='flex flex-col gap-3'>
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={index}
+              faq={faq}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            />
+          ))}
+        </div>
 
-      <Image
-        src='/illustrations/direction.svg'
-        alt='FAQs Illustration'
-        width={361}
-        height={383}
-        className='object-contain'
-        style={{
-          position: 'absolute',
-          zIndex: 0,
-          bottom: '-8px',
-          left: '-11px',
-        }}
-      />
+        <Image
+          src='/illustrations/direction.svg'
+          alt='FAQs Illustration'
+          width={361}
+          height={383}
+          className='object-contain'
+          style={{
+            position: 'absolute',
+            zIndex: 0,
+            bottom: '-8px',
+            left: '-11px',
+          }}
+        />
+      </div>
     </section>
   );
 }
@@ -63,7 +65,7 @@ function FAQItem({
   return (
     <motion.div
       onClick={onToggle}
-      className='cursor-pointer w-[729px] bg-[#F7F7F7] rounded-[10px] p-6 flex justify-between items-center gap-4 transition-colors duration-250 hover:bg-[#f2f1f1]'
+      className='cursor-pointer w-[700px] bg-[#F7F7F7] rounded-[10px] p-6 flex justify-between items-center gap-4 transition-colors duration-250 hover:bg-[#f2f1f1]'
       layout
       transition={{ layout: { duration: 0.2, ease: 'easeOut' } }}
     >

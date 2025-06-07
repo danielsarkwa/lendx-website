@@ -6,7 +6,7 @@ export default function Partners() {
   return (
     <section
       id='partners'
-      className='py-[90px] flex flex-col gap-[50px] items-center w-full'
+      className='max-w-[1300px] mx-auto py-[90px] flex flex-col gap-[50px] items-center w-full'
     >
       <div className='flex flex-col items-center gap-2.5'>
         <Badge className='bg-[#EBEBFF] text-[#6461FF] text-base font-normal rounded-full px-2.5'>

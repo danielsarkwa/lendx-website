@@ -17,7 +17,7 @@ export default function Testimonials() {
   return (
     <section
       id='testimonials'
-      className='flex flex-col py-[90px] gap-[50px] px-[100px]'
+      className='max-w-[1300px] mx-auto flex flex-col py-[90px] gap-[50px]'
     >
       {/* section header */}
       <div className='flex flex-col gap-5'>
