@@ -126,7 +126,21 @@ html {
 }
 
 .animate-scroll {
-  animation: scroll 35s linear infinite;
+  animation: scroll 10s linear infinite;
+}
+
+@media (min-width: 640px) {
+  /* Tailwind's sm breakpoint */
+  .animate-scroll {
+    animation: scroll 25s linear infinite;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Tailwind's lg breakpoint */
+  .animate-scroll {
+    animation: scroll 35s linear infinite;
+  }
 }
 
 @keyframes scroll {
