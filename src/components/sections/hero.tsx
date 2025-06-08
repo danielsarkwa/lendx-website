@@ -45,18 +45,6 @@ export default function Hero() {
         >
           <LoadForm />
         </div>
-
-        <Image
-          src='/blur-effects/hero-blur.png'
-          alt='Hero blur background'
-          width={300}
-          height={240}
-          className='hidden sm:block object-cover w-[300px] h-[240px] right-1 sm:w-[400px] sm:h-[320px] sm:left-[500px] lg:w-[600px] lg:h-[480px] lg:left-[1000px] '
-          style={{
-            position: 'absolute',
-            zIndex: -1,
-          }}
-        />
       </div>
 
       <Image
